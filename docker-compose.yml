@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+  web:
+    image: nginx:1.23
+    container_name: business-frontend
+    volumes:
+      - .\default.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 8080:80
+    networks:
+      business-network:
+        ipv4_address: 192.168.0.200
+    depends_on:
+      - factory
+  factory:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: business-backend
+    command: gunicorn --bind 0.0.0.0:8005 "start:start()"
+    volumes:
+      - .\logs\business.log:/var/log/business.log:rw
+      - .\flask:/var/www
+      - .\data:/tobeanalyzed:rw
+    restart: on-failure
+    networks:
+      business-network:
+        ipv4_address: 192.168.0.201
+        aliases:
+          - business-app
+networks:
+  business-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/24

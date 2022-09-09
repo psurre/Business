@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+    <meta name="title" content="Business App">
+    <meta name="description" content="Application pour le suivi d'un compte bancaire.">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Patrick">
+    {% block headcontent %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/jquery-ui-1.12.1/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <section class="content">
+    <header>
+    </header>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+    <footer class="site-footer ">
+    </footer>
+    </section>
+</body>

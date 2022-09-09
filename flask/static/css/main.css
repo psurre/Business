@@ -1,0 +1,277 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 oct. 2020, 12:50:57
+    Author     : vmagnan
+*/
+
+section {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+a {
+    color: rgb(0,80,131);
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.0); /* 0.0 - transparent */
+}
+
+.imgFullWidth{
+    width:100%;
+}
+/* NAVBAR */
+#logo-kontron{
+    width:180px;
+}
+
+/* BUTTON TOP */
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    color:white;
+    border-radius: 15px;
+    background-color: rgba(0,80,131,1);
+}
+
+#back-to-top:hover{
+    background-color:rgba(0,80,131,0.6);
+}
+
+/* FOOTER */
+.site-footer
+{
+    background-color:#26272b;
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:24px;
+    color:#737373;
+}
+.site-footer hr
+{
+    border-top-color:#bbb;
+    opacity:0.5
+}
+.site-footer hr.small
+{
+    margin:20px 0
+}
+.site-footer h6
+{
+    color:#fff;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+}
+.site-footer a
+{
+    color:#737373;
+}
+.site-footer a:hover
+{
+    color:#3366cc;
+    text-decoration:none;
+}
+.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
+.footer-links
+{
+    padding-left:0;
+    list-style:none
+}
+.footer-links li
+{
+    display:block
+}
+.footer-links a
+{
+    color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+    color:#3366cc;
+    text-decoration:none;
+}
+.footer-links.inline li
+{
+    display:inline-block
+}
+.site-footer .social-icons
+{
+    text-align:right
+}
+.site-footer .social-icons a
+{
+    width:40px;
+    height:40px;
+    line-height:40px;
+    margin-left:6px;
+    margin-right:0;
+    border-radius:100%;
+    background-color:#33353d
+}
+.copyright-text
+{
+    margin:0
+}
+@media (max-width:991px)
+{
+    .site-footer [class^=col-]
+    {
+        margin-bottom:30px
+    }
+}
+@media (max-width:767px)
+{
+    .site-footer
+    {
+        padding-bottom:0
+    }
+    .site-footer .copyright-text,.site-footer .social-icons
+    {
+        text-align:center
+    }
+}
+.social-icons
+{
+    padding-left:0;
+    margin-bottom:0;
+    list-style:none
+}
+.social-icons li
+{
+    display:inline-block;
+    margin-bottom:4px
+}
+.social-icons li.title
+{
+    margin-right:15px;
+    text-transform:uppercase;
+    color:#96a2b2;
+    font-weight:700;
+    font-size:13px
+}
+.social-icons a{
+    background-color:#eceeef;
+    color:#818a91;
+    font-size:16px;
+    display:inline-block;
+    line-height:44px;
+    width:44px;
+    height:44px;
+    text-align:center;
+    margin-right:8px;
+    border-radius:100%;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+    color:#fff;
+    background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+    line-height:34px;
+    height:34px;
+    width:34px;
+    font-size:14px
+}
+.social-icons a.facebook:hover
+{
+    background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+    background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+    background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+    background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+    .social-icons li.title
+    {
+        display:block;
+        margin-right:0;
+        font-weight:600
+    }
+}
+
+/*Colors & Font*/
+.text-blue{
+    color:rgba(0,80,131,1);
+}
+.text-orange{
+    color:orange;
+}
+.text-green{
+    color:green;
+}
+.text-red{
+    color:red;
+}
+.text-blue-light{
+    color:rgba(74,134,181,1);
+}
+.text-italic{
+    font-style: italic;
+}
+
+.list-dot-square {
+    list-style-type: square;
+}
+/*Recursive color bg to child h6 elements*/
+.r-blue-bg > h6{
+    background-color:rgba(0, 80, 131, 0.8) !important;
+}
+.r-light-blue-bg > h6{
+    background-color:rgba(74, 134, 181, 0.8) !important;
+}
+.r-light-grey-bg > h6{
+    background-color:rgba(198,196,180, 0.2) !important;
+}
+/*Colors BG*/
+.light-blue-bg{background-color:rgba(74, 134, 181, 0.8) !important;}
+.blue-bg{background-color:rgba(0, 80, 131, 0.8) !important;}
+.grey-bg{background-color:rgba(88, 88, 90, 0.8) !important;}
+.purple-bg{background-color:rgba(111, 60, 140, 0.8) !important;}
+
+.lock {
+    background: gray;
+    border-radius: 3px;
+    width: 25px;
+    height: 20px;
+    margin-top: 60px;
+    margin-left: 60px;
+    position: relative;
+  }
+  
+  .lock:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border:3px solid gray;
+    top: -14px;
+    left: 2.3px;
+    width: 15px;
+    height: 27px;
+    border-radius: 35px 35px 0 0;
+  }
