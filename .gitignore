@@ -1,2 +1,3 @@
 /logs
 /venv
+/flask/__pycache__
