@@ -7,7 +7,8 @@ from Compte import Compte
 def start():
 
     compte: Compte = toolbox.lireFichierCSV()
-    compte.afficherCompte()
+    if compte is not None:
+        compte.afficherCompte()
 
     app = Flask(__name__)
     # Gestion de la session

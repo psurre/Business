@@ -21,4 +21,5 @@ def lireFichierCSV():
             source.close
     except FileNotFoundError:
         logging.error(localeFR.ERRFILENOTFOUND.format(fichier))
+        return None
     return compte
