@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <fieldset disabled>
+            <legend>Suivi kilométrique de la Skoda</legend>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Date limite du contrat</span>
+                <input type="text" class="form-control" placeholder="{{ data['datelimite'] }}" aria-label="Date limite du contrat" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Nous sommes le</span>
+                <input type="text" class="form-control" placeholder="{{ data['today'] }}" aria-label="Nous sommes le" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Nombre de jours restants</span>
+                <input type="text" class="form-control" placeholder="{{ data['daytolimit'] }}" aria-label="Nombre de jours restants" aria-describedby="basic-addon3">
+            </div>
+        </fieldset>
+    </div>
+    <form class="row g-3">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="inputkms" placeholder="Entrez le nombre de kilomètres actuels" aria-label="Kilométrage" aria-describedby="button-addon2" required>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="calculerKms()">Valider</button>
+        </div>
+        {% if g.kmsparsem %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon4">Nombre de kilomètres max par semaine : </span>
+            <input type="text" class="form-control" id="inputkms" placeholder="{{ g.kmsparsem }}" aria-label="Kilométrage" aria-describedby="basic-addon4" disabled>
+        </div>
+        {% endif %}
+        {% if g.kmsparjour %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon5">Nombre de kilomètres max par jours : </span>
+            <input type="text" class="form-control" id="inputkms" placeholder="{{ g.kmsparjour }}" aria-label="Kilométrage" aria-describedby="basic-addon5" disabled>
+        </div>
+        {% endif %}
+    </form>
+</div>
+<script src="{{ url_for('static', filename='js/toolbox.js') }}"></script>
+{% endblock %}

@@ -1,6 +1,7 @@
-import csv, logging, localeFR
+import csv, logging, localeFR, constants
 from Operation import Operation
 from Compte import Compte
+from datetime import date
 
 def lireFichierCSV():
     titrecolonnes = True
@@ -23,3 +24,13 @@ def lireFichierCSV():
         logging.error(localeFR.ERRFILENOTFOUND.format(fichier))
         return None
     return compte
+
+def joursRestants():
+    data = {}
+    datelimite = date(day=int(constants.DATELIMITE['day']), month=int(constants.DATELIMITE['month']), year=int(constants.DATELIMITE['year']))
+    today = date.today()
+    daytolimit = datelimite - today
+    data['datelimite'] = datelimite.strftime("%d/%m/%Y")
+    data['today'] = today.strftime("%d/%m/%Y")
+    data['daytolimit'] = daytolimit.days
+    return data
