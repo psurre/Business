@@ -1,0 +1,109 @@
+/*NEW*/
+body {
+  background: url('../img/bg/bg-index.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.carousel-inner{
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.form-group label{
+    font-weight: 600;
+}
+
+.form-check label{
+    font-weight: 400;
+}
+.buttonRequestDemo {
+    background-color: rgba(0,80,131,1);
+    border: none;
+    border-radius: 0px;
+    padding: 20px 20px;
+}
+.buttonRequestDemo:hover{
+    background-color:rgba(0,80,131,0.6);
+}
+
+/*OLD que j'ai gardé'*/
+
+.tile
+{
+    width:310px;
+    height:310px;
+    margin:10px;
+    background-color:rgba(0,80,131,0.8);
+    display:inline-block;
+    background-size:cover;
+    position:relative;
+    cursor:pointer;
+    transition: all 0.4s ease-out;
+    box-shadow: 0px 7px 12px -2px rgba(0,0,0,0.44);
+    overflow:hidden;
+    color:white;
+}
+.tile img
+{
+    height:100%;
+    width:100%;
+    position:absolute;
+    transition: all 0.4s ease-out;
+
+}
+.tile .text
+{
+    position:absolute;
+}
+.tile h2
+{
+    font-weight:600;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    background-color:rgba(0,80,131,0.55)
+
+}
+.tile h3
+{
+    font-weight:100;
+    margin:10px 0 0 0;
+    transform: translateX(200px);
+    padding:20px;
+}
+.tile p
+{
+    font-weight:300;
+    margin:10px 0 0 0;
+    line-height: 25px;
+    font-style:italic;
+    transform: translateX(-200px);
+    transition-delay: 0.2s;
+    padding:20px;
+}
+
+.tile a {
+    color: white;
+    background-color: rgba(0,80,131,1);
+    text-decoration: none;
+    padding: 5px
+}
+
+.animate-text
+{
+    opacity:0;
+    transition: all 0.6s ease-in-out;
+}
+.tile:hover
+{
+    box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
+    transform:scale(1.05);
+}
+.tile:hover img
+{
+    opacity: 0.2;
+}
+.tile:hover .animate-text
+{
+    transform:translateX(0);
+    opacity:1;
+}
