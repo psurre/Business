@@ -33,24 +33,38 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Accueil</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarComptes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Comptes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarComptes">
-                  <li><a class="dropdown-item" href="#">Synthèse</a></li>
-                  <li><a class="dropdown-item" href="{{ url_for('detail') }}">Détail</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarVehicules" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Véhicules
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarVehicules">
-                  <li><a class="dropdown-item" href="{{ url_for('skoda') }}">Suivi Skoda</a></li>
-                </ul>
-              </li>
+              {% if current_user.is_authenticated %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarComptes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Comptes
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarComptes">
+                    <li><a class="dropdown-item" href="#">Synthèse</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('detail') }}">Détail</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarVehicules" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Véhicules
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarVehicules">
+                    <li><a class="dropdown-item" href="{{ url_for('skoda') }}">Suivi Skoda</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ current_user.username }}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarUser">
+                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Se déconnecter</a></li>
+                  </ul>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                </li>
+              {% endif %}
             </ul>
           </div>
         </div>

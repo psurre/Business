@@ -1,5 +1,11 @@
 flask
+flask-login
+Flask-SQLAlchemy
+Flask-WTF
+Flask-Bcrypt
+WTForms
 gunicorn
 PyYAML
 watchdog
 lxml
+WTForms
