@@ -83,6 +83,7 @@ def start():
     @app.route('/calculerkms/<valeur>', methods=['POST'])
     def calculerkms(valeur):
         data = {}
+        infos = []
         kmsrestants = constants.KM_MAX - int(valeur)
         data = toolbox.joursRestants().copy()
         semaines = float(int(data['daytolimit']) / 7)
@@ -90,6 +91,9 @@ def start():
         kmsparjour = round (float(kmsrestants / int(data['daytolimit'])), 2)
         session['kmsparsem'] = kmsparsem
         session['kmsparjour'] = kmsparjour
+        infos.append(data['daytolimit'])
+        infos.append(kmsparjour)
+        toolbox.persistKmsRestants(infos)
         versFetch = make_response(jsonify({"message":"everythingisfine!"}), 200)
         return versFetch
     

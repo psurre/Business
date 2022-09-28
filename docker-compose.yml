@@ -21,7 +21,8 @@ services:
     volumes:
       - ./logs/business.log:/var/log/business.log:rw
       - ./flask:/var/www
-      - ./data:/tobeanalyzed:rw
+      - ./data/input:/tobeanalyzed:ro
+      - ./data/persist:/tobestored:rw
     restart: on-failure
     networks:
       business-network:

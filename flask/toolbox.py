@@ -1,7 +1,7 @@
-import csv, logging, localeFR, constants
+import csv, logging, localeFR, constants, json
 from Operation import Operation
 from Compte import Compte
-from datetime import date
+from datetime import date, datetime
 
 def lireFichierCSV():
     titrecolonnes = True
@@ -34,3 +34,28 @@ def joursRestants():
     data['today'] = today.strftime("%d/%m/%Y")
     data['daytolimit'] = daytolimit.days
     return data
+
+def persistKmsRestants(infos):
+    fichier = f"{constants.PERSISTDIR}/{constants.KMSRESTANTSFILE}"
+    datewrote = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    datatowrite = {
+        "joursrestants": infos[0],
+        "kmsparjour": infos[1],
+        "horodatage": datewrote
+    }
+    try:
+        with open(fichier, 'r+') as lecture:
+            datalues = lecture.read()  
+            dataluesjson = json.loads(datalues)
+            dataluesjson['historique'].append(datatowrite)
+            lecture.seek(0)
+            json.dump(dataluesjson, lecture)
+            lecture.truncate()
+            lecture.close()
+    except FileNotFoundError:
+        logging.error(f"Le fichier {fichier} est introuvable.")
+        return False
+    except json.JSONDecodeError:
+        logging.error(f"Erreur dans la sérialisation - désérialisation JSON")
+        return False
+    return True
